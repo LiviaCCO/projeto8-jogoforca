@@ -1,0 +1,139 @@
+* {
+  box-sizing: border-box;
+}
+
+body{
+  background: #F5F5F5;
+  position: relative;
+  width: 1025px;
+  height: 839px;
+}
+.word{
+  position: absolute;
+  top:90px;
+  right: 50px;
+  width: 200px;
+  height: 60px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 23px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #FFFFFF;
+  background: #27AE60;
+  border-radius: 8px;
+  border: none;
+}
+img{
+  position: absolute;
+  top: 60px;
+  left: 40px;
+  width: 400px;
+  height: 467px;
+}
+.alphabet{
+  position: absolute;
+  bottom: 150px;
+  left: 210px;
+  width: 665px;
+  height: 90px;
+  display: flex;
+/*   flex-direction: row;
+  flex-wrap: wrap; */
+  flex-flow: row wrap;
+  justify-content: space-between;
+
+}
+.wordChosen{
+  position: absolute;
+  right: 60px;
+  top: 430px;
+  display: flex;
+}
+.letterChosen{
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  border-bottom: solid;
+  border-color: #000000;
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 50px;
+  line-height: 68px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #000000;
+}
+
+.letter{
+  width: 40px;
+  height: 40px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  color: #798A9F;
+  background: #9FAAB5;
+  border: 1px solid #7AA7C7;
+  border-radius: 3px;
+}
+.start{
+  background: #E1ECF4;
+  color: #39739D;
+}
+
+ol, ul{
+  list-style: none;
+}
+.jaSei{
+  position: absolute;
+  bottom: 56px;
+  left: 230px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #000000;
+}
+input{
+  margin: 20px;
+  width: 353px;
+  height: 40px;
+  background: #FFFFFF;
+  border: 1px solid #CCCCCC;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 3px;
+}
+.finish{
+  width: 100px;
+  height: 40px;
+  background: #E1ECF4;
+  border: 1px solid #7AA7C7;
+  border-radius: 3px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #3C76A1;
+}
