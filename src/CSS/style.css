@@ -5,6 +5,7 @@
 body{
   background: #F5F5F5;
   position: relative;
+  font-family: 'Roboto', sans-serif;
   width: 1025px;
   height: 839px;
 }
@@ -14,8 +15,6 @@ body{
   right: 50px;
   width: 200px;
   height: 60px;
-  font-family: 'Roboto';
-  font-style: normal;
   font-weight: 700;
   font-size: 20px;
   line-height: 23px;
@@ -58,7 +57,7 @@ img{
   width: 40px;
   height: 40px;
   margin-right: 10px;
-  border-bottom: solid;
+/*   border-bottom: solid; */
   border-color: #000000;
   font-family: 'Noto Sans';
   font-style: normal;
@@ -75,8 +74,6 @@ img{
 .letter{
   width: 40px;
   height: 40px;
-  font-family: 'Roboto';
-  font-style: normal;
   font-weight: 700;
   font-size: 16px;
   line-height: 19px;
@@ -103,8 +100,6 @@ ol, ul{
   position: absolute;
   bottom: 56px;
   left: 230px;
-  font-family: 'Roboto';
-  font-style: normal;
   font-weight: 400;
   font-size: 20px;
   line-height: 23px;
@@ -136,4 +131,10 @@ input{
   align-items: center;
   text-align: center;
   color: #3C76A1;
+}
+.vermelho{
+  color: red;
+}
+.verde{
+  color: green;
 }
