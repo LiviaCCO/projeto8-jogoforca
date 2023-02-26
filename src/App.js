@@ -26,7 +26,7 @@ export default function App() {
   
   function letraNaPalavra(letra){
     console.log("Entrou na funcao lera na palavra", letra)
-    setInicio(true);
+    //setInicio(true);
     //const novaOculta=wordOculta;
     console.log("novaOculta antes do for",novaOculta)
     let cont = 0;
@@ -67,7 +67,7 @@ export default function App() {
   return (
     <div className="App">
       
-      <Jogo  wordOculta={wordOculta} setWordOculta={setWordOculta} contErro={contErro} cor={cor} setCor={setCor} letraNaPalavra={letraNaPalavra} inicio={inicio} word={word} setWord={setWord} letter={letter} setLetter={setLetter} setSelecionada={setSelecionada}/>
+      <Jogo  inicio={inicio} setInicio={setInicio} wordOculta={wordOculta} setWordOculta={setWordOculta} contErro={contErro} setContErro={setContErro} cor={cor} setCor={setCor} letraNaPalavra={letraNaPalavra} inicio={inicio} word={word} setWord={setWord} letter={letter} setLetter={setLetter} setSelecionada={setSelecionada}/>
       <Letras letraNaPalavra={letraNaPalavra} inicio={inicio} setInicio={setInicio} word={word} setWord={setWord} letter={letter} setLetter={setLetter} selecionada={selecionada} setSelecionada={setSelecionada}/>
       {/* <JaSei />  */}
 
@@ -75,7 +75,7 @@ export default function App() {
   )
 }
 
-function Jogo({word, setWord, wordOculta, setWordOculta, contErro, cor, setCor, inicio, setSelecionada}) {
+function Jogo({word, setWord, wordOculta, setWordOculta, contErro, setContErro, cor, setCor, setInicio,  inicio, setSelecionada}) {
   // lista com imagens
   const listaDeImagens = [forca0,forca1,forca2,forca3,forca4,forca5,forca6];
   
@@ -99,6 +99,8 @@ function Jogo({word, setWord, wordOculta, setWordOculta, contErro, cor, setCor, 
       setWordOculta([]);
       setCor("");
       setSelecionada([]);
+      setContErro(0);
+      setInicio(true);
       //habilitar letras
       //setInicio(false);
       //numErro = 0
@@ -125,7 +127,7 @@ function Jogo({word, setWord, wordOculta, setWordOculta, contErro, cor, setCor, 
   )
 }
 
-function Letras({letraNaPalavra, selecionada, setSelecionada}){
+function Letras({inicio, setInicio, letraNaPalavra, selecionada, setSelecionada}){
   const alfabeto = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W', 'X','Y','Z'];
   
   //const [inicio, setInicio] = useState(false);
@@ -140,6 +142,7 @@ function Letras({letraNaPalavra, selecionada, setSelecionada}){
 
       //verificar se letra consta na palavra
       letraNaPalavra(letraSelecionada);
+      
   }
   
  
@@ -150,8 +153,10 @@ function Letras({letraNaPalavra, selecionada, setSelecionada}){
           <button 
           onClick = {letraSelecionada}
           value= {letra}
-          disabled={selecionada.includes(letra)} 
-          className={selecionada.includes(letra) ? "letter": "letter start"}>{letra}</button>
+          disabled={!inicio ? true : (selecionada.includes(letra) ? true : false)} 
+         // className={selecionada.includes(letra) ? "letter": "letter start"}>{letra}</button>
+          className={inicio ? (selecionada.includes(letra) ? "letter": "letter start") : ("letter")}>{letra}</button>
+
       </li>
       ))}
   </ul>)
