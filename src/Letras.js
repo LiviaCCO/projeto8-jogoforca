@@ -1,52 +1,35 @@
-import { useState } from "react";
-
-export default function Letras({word, setWord, letter, setLetter}){
+export default function Letras({inicio, letraNaPalavra, selecionada, setSelecionada}){
     const alfabeto = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W', 'X','Y','Z'];
     
-    const [inicio, setInicio] = useState(false);
-    const [selecionada, setSelecionada] = ([]);
+    //const [inicio, setInicio] = useState(false);
+    //const [selecionada, setSelecionada] = useState([]);
+    //const [clicou, setClicou]
+    console.log("selecionada",selecionada);
     
-    function letra(event){
+    function letraSelecionada(event){
         const letraSelecionada = event.target.value;
         //adicionar a letra à lista das letras selecionadas
         setSelecionada([...selecionada, letraSelecionada]);
-        //setLetter(letraSelecionada);
-        //setInicio(!inicio);
-        console.log("set",event.target.value)
-        
-        //for(let i=0; i<word.length; i++){
-        //    if(letter===word[i]){
-                //trocar _ pela letra
-        //    }
-        //}
+  
+        //verificar se letra consta na palavra
+        letraNaPalavra(letraSelecionada);
         
     }
-    console.log("letter",letter);
+    
    
     return(
     <ul className="alphabet">
-        {alfabeto.map((item)=>(
+        {alfabeto.map((letra)=>(
         <li>
-            <button 
-            //selecionado = {letraSelecionada}
-            onClick = {letra}
-            value= {item}
-            disabled={selecionada.includes(item)} 
-            className={selecionada.includes(item) ? "letter": "letter start"}>{item}</button>
+            <button
+            data-test="letter"
+            onClick = {letraSelecionada}
+            value= {letra}
+            disabled={!inicio ? true : (selecionada.includes(letra) ? true : false)} 
+           // className={selecionada.includes(letra) ? "letter": "letter start"}>{letra}</button>
+            className={inicio ? (selecionada.includes(letra) ? "letter": "letter start") : ("letter")}>{letra}</button>
+  
         </li>
         ))}
-    </ul>
-
-/*     <ul className="alphabet">
-        {alfabeto.map((item)=>(
-        <li>
-            <button 
-            onClick = {()=>setInicio(!inicio)}
-            value= {item}
-            //disabled={inicio} 
-            className={inicio ? "letter": "letter start"}>{item}</button>
-        </li>
-        ))}
-    </ul> */
-    )
-}
+    </ul>)
+  }
